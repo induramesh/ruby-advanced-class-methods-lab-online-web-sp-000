@@ -24,7 +24,10 @@ class Song
   end 
   
   def self.find_by_name(song_name)
-    self.all.select {|song| song.name == song_name}
+    if self.all.include?(song.name == song_name)
+      self.all.select {|song| song.name == song_name}[0]
+    else
+      false
   end 
   
   def self.find_or_create_by_name(song_name)
