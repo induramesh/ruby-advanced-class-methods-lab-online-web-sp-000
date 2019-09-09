@@ -22,6 +22,9 @@ class Song
     new_song.save
     new_song
   end 
+  
+  def self.find_by_name(song_name)
+    self.all.include?(song)
 
   def self.all
     @@all
