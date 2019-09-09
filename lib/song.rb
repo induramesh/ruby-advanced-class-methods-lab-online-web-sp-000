@@ -9,9 +9,10 @@ class Song
   
   @@all = []
   
-  def create
-    save
-    self 
+  def self.create
+    new_song = Song.new
+    new_song.save
+    new_song 
   end 
 
   def self.all
