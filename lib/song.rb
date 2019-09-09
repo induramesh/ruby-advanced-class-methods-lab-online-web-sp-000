@@ -28,11 +28,12 @@ class Song
       self.all.select {|song| song.name == song_name}[0]
     else
       false
+    end 
   end 
   
   def self.find_or_create_by_name(song_name)
     res = find_by_name(song_name) 
-    if res == nil 
+    if res == false 
       self.create_by_name(song_name)
     else
       res 
